@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib as plt
 import pandas
 
-csv_fpath = '/Users/yairwygoda/Desktop/Machine_Learning_ex1/cancer_data.csv'
+csv_fpath = 'cancer_data.csv'
 df = pandas.read_csv(csv_fpath ,names=['x0', 'x1','x2', 'x3', 'x4','x5', 'x6', 'x7','x8', 'y'])
 matrix = df.values.tolist()
 testMat = df.values.tolist()
