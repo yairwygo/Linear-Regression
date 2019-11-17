@@ -92,3 +92,4 @@ print("\n")
 print(sum(transMatList[0]))
 print("\n")
 print(matrix.sum(axis= 0))
+
