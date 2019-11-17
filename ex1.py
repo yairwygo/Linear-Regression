@@ -54,7 +54,7 @@ for i in transposedMat:
 print('means ave : ',np.mean(means))
 print('standardDeviations ave : ',np.mean(standardDeviations))
 
-#print('\n\n')
+
 print('\n\n\n\n')
 print('\n')
 print(transposedMat[0])
