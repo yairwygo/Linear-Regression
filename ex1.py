@@ -58,5 +58,37 @@ print('standardDeviations ave : ',np.mean(standardDeviations))
 print('\n\n\n\n')
 print('\n')
 print(transposedMat[0])
+print(type(transposedMat[0]))
+#convert the transposed matrix into a list type
+transMatList = transposedMat.tolist()
 
 
+
+#######################################################
+#######################################################
+#testing the function h(x,theta)
+thetaTest0 = list(0 for i in range(rows+1))
+thetaTest1 = list(1 for i in range(rows+1))
+print(len(transMatList[0]))
+print(len(thetaTest1))
+
+#Theta and x are both lists
+def h(x,theta):
+    '''
+    :param x: a list(i.e. vector) of a row in the X transposed matrix
+    :param theta: a list(i.e. vector) of parameters that characterize the model
+    :return: the model i.e. the result of the linear function of the model
+    '''
+    ##### x.insert(0, 1)#append first element in x to 1
+    print(len(x))
+    h = 1
+    for i in range(len(x)):
+        h = h + x[i]#*theta[i]
+    return h
+
+
+print(h(transMatList[0],thetaTest1))
+print("\n")
+print(sum(transMatList[0]))
+print("\n")
+print(matrix.sum(axis= 0))
