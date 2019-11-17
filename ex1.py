@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib as plt
 import pandas
 
-csv_fpath = 'cancer_data.csv'
+csv_fpath = '/Users/yairwygoda/Desktop/Machine_Learning_ex1/cancer_data.csv'
 df = pandas.read_csv(csv_fpath ,names=['x0', 'x1','x2', 'x3', 'x4','x5', 'x6', 'x7','x8', 'y'])
 matrix = df.values.tolist()
 testMat = df.values.tolist()
@@ -43,7 +43,7 @@ for i in  range(cols):
 print('\nafter normalizing')
 print(transposedMat)
 
-
+#computing the means value of the means and the standard diviation of the transposed matrix
 means= list()
 standardDeviations = list()
 for i in transposedMat:
@@ -54,6 +54,9 @@ for i in transposedMat:
 print('means ave : ',np.mean(means))
 print('standardDeviations ave : ',np.mean(standardDeviations))
 
-print('\n\n')
+#print('\n\n')
+print('\n\n\n\n')
+print('\n')
+print(transposedMat[0])
 
 
