@@ -9,11 +9,6 @@ x=np.ones((rows,cols))
 y=np.ones((rows,1))
 
 
-
-print("rows : " , rows)
-print("cols : " , cols)
-print('\n\n')
-
 transposedMat = np.copy(matrix.T)
 
 for i in range(rows):
@@ -27,8 +22,6 @@ for i in range(rows):
         x[i][j+1]=matrix[i][j]
     y[i]=matrix[i][cols-1]
 
-print(x)
-print(y)
 ##Q1.b
 
 def h(xv,theta):
@@ -64,7 +57,7 @@ def gradient (x,y,theta):
 
 ##Q1.e
 
-def gradienctDesent(x,y,alpha):
+def gradientDescent(x,y,alpha):
 
     k=0
     numOfIteration = 20
@@ -86,10 +79,10 @@ def gradienctDesent(x,y,alpha):
         k = k + 1
 
     return JList
-
-plt.plot(gradienctDesent(x,y,0.1), color = "b")
-plt.plot(gradienctDesent(x,y,0.01), color = "r")
-plt.plot(gradienctDesent(x,y,0.001), color = "g")
+plt.figure("Gradient Descent - different alphas")
+plt.plot(gradientDescent(x,y,0.1), color = "b")
+plt.plot(gradientDescent(x,y,0.01), color = "r")
+plt.plot(gradientDescent(x,y,0.001), color = "g")
 plt.show()
 
 ##Q1.f
@@ -104,7 +97,7 @@ def miniBatch(x,y,alpha,n):
     JList = []
     while True:
         for j in range(cols):
-            for i in range(k*n, (k+1)*n-1):
+            for i in range(k* n, (k+1)*n-1):
                 new_i = i % rows
                 theta1[j] = theta1[j] - (alpha * ((h(x[new_i],theta0)-y[new_i])*x[new_i][j]))/n
         JList.append(jErr(x, y, theta0))
@@ -115,9 +108,9 @@ def miniBatch(x,y,alpha,n):
     return JList
 
 
-
+plt.figure("Mini Batch")
 plt.plot(miniBatch(x,y,0.1,50),color="b")
-plt.title("Mini batch")
+plt.title("Mini Batch")
 plt.show()
 
 #Q1.g
@@ -147,8 +140,9 @@ def momentum (x,y):
         k = k + 1
     return JList
 
+plt.figure("Momentum")
 plt.plot(momentum(x,y),color="b")
-plt.title("momentum")
+plt.title("Momentum")
 plt.show()
 
 
